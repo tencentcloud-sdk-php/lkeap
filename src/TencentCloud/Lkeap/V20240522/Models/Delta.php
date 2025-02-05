@@ -18,40 +18,28 @@ namespace TencentCloud\Lkeap\V20240522\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * 会话内容
+ * 返回的内容
  *
- * @method string getRole() 获取角色
- * @method void setRole(string $Role) 设置角色
- * @method string getContent() 获取内容
- * @method void setContent(string $Content) 设置内容
- * @method string getReasoningContent() 获取思维链内容。
-ReasoningConent参数仅支持出参，且只有deepseek-r1模型会返回。
- * @method void setReasoningContent(string $ReasoningContent) 设置思维链内容。
-ReasoningConent参数仅支持出参，且只有deepseek-r1模型会返回。
+ * @method string getRole() 获取角色名称。
+ * @method void setRole(string $Role) 设置角色名称。
+ * @method string getContent() 获取内容详情。
+ * @method void setContent(string $Content) 设置内容详情。
  */
-class Message extends AbstractModel
+class Delta extends AbstractModel
 {
     /**
-     * @var string 角色
+     * @var string 角色名称。
      */
     public $Role;
 
     /**
-     * @var string 内容
+     * @var string 内容详情。
      */
     public $Content;
 
     /**
-     * @var string 思维链内容。
-ReasoningConent参数仅支持出参，且只有deepseek-r1模型会返回。
-     */
-    public $ReasoningContent;
-
-    /**
-     * @param string $Role 角色
-     * @param string $Content 内容
-     * @param string $ReasoningContent 思维链内容。
-ReasoningConent参数仅支持出参，且只有deepseek-r1模型会返回。
+     * @param string $Role 角色名称。
+     * @param string $Content 内容详情。
      */
     function __construct()
     {
@@ -72,10 +60,6 @@ ReasoningConent参数仅支持出参，且只有deepseek-r1模型会返回。
 
         if (array_key_exists("Content",$param) and $param["Content"] !== null) {
             $this->Content = $param["Content"];
-        }
-
-        if (array_key_exists("ReasoningContent",$param) and $param["ReasoningContent"] !== null) {
-            $this->ReasoningContent = $param["ReasoningContent"];
         }
     }
 }
